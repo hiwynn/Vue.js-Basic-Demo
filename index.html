@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/require.js"></script>
+		<script src="js/config.js"></script>
+	</head>
+	<body>
+		<div id="main">
+			<ul>
+				<li v-for="item in data">
+					<a v-bind:href="'#'+item.link">
+						<img v-bind:src="item.img"/>
+						<p>{{item.name}}</p>
+						<p>{{item.price}}</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div id="product" class="hide">
+			<div class="img"><img v-bind:src="img" /></div>
+			<p class="name">{{name}}</p>
+			<p class="price">{{price}}</p>
+		</div>
+		<script>
+			require(['data','vue','hash'],function(data,Vue,hash){
+				data.indexData(function(result){
+					var app = new Vue({
+						el: "#main",
+						data: {
+								data: result
+							}
+					});
+					hash.refresh();
+					hash.addroute(/^\/$|^$/,function(url){
+						$("#main").removeClass("hide");
+						$("#product").addClass("hide");
+					});
+					var appimg;
+					hash.addroute(/^\/dog\d/,function(url){
+						$("#main").addClass("hide");
+						$("#product").removeClass("hide");
+						for(var i=0; i<result.length; i++){
+							if(url == result[i].link){
+								if(appimg){
+									appimg.img = result[i].img;
+									appimg.name = result[i].name;
+									appimg.price = result[i].price;
+								}else{
+									appimg = new Vue({
+										el: "#product",
+										data: {
+											img: result[i].img,
+											name: result[i].name,
+											price: result[i].price
+										}
+									});
+								}
+								
+							}
+						}
+						
+					})
+					hash.refresh();
+				})
+			})
+		</script>
+	</body>
+</html>

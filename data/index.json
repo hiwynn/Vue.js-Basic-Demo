@@ -1,0 +1,36 @@
+[{
+	"img":"images/1.jpg",
+	"name":"加多宝凉茶1",
+	"link":"/dog1",
+	"price":"￥1.00"
+},
+{
+	"img":"images/2.jpg",
+	"name":"加多宝凉茶2",
+	"link":"/dog2",
+	"price":"￥2.00"
+},
+{
+	"img":"images/3.jpg",
+	"name":"加多宝凉茶3",
+	"link":"/dog3",
+	"price":"￥3.00"
+},
+{
+	"img":"images/4.jpg",
+	"name":"加多宝凉茶4",
+	"link":"/dog4",
+	"price":"￥4.00"
+},
+{
+	"img":"images/5.jpg",
+	"name":"加多宝凉茶5",
+	"link":"/dog5",
+	"price":"￥5.00"
+},
+{
+	"img":"images/6.jpg",
+	"name":"加多宝凉茶6",
+	"link":"/dog6",
+	"price":"￥6.00"
+}]

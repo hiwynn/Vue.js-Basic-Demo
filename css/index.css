@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "微软雅黑";
+}
+ul{
+    width: 800px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+li{
+    list-style: none;
+    flex: 0 0 30%;
+    height: 270px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 30px;
+    
+}
+img{
+    width: 200px;
+    height: auto;
+}
+.hide{
+    display: none;
+}
